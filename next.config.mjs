@@ -26,16 +26,4 @@ const nextConfig = {
 const configWithBundleAnalyzer = withBundleAnalyzer(nextConfig);
 
 export default isStorybook
-  ? nextConfig
-  : withSentryConfig(configWithBundleAnalyzer, {
-      org: "your-org",
-      project: "your-project",
-      silent: true,
-      widenClientFileUpload: true,
-      webpack: {
-        reactComponentAnnotation: { enabled: true },
-        treeshake: { removeDebugLogging: true },
-        automaticVercelMonitors: true,
-      },
-      hideSourceMaps: true,
-    });
+  ? nextConfig;
